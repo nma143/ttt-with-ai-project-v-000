@@ -123,8 +123,10 @@ module Players
         potential_array_with_cell_indices.each do |priority_set|
           # priority_set e.g [[1, 2], [2, 6]]
           if priority_set[0][0] == 1 && priority_set[0][1] == 2 #my potential is 1, opponent's potential is 2
+            #here i'm looking at cells where there is potential for me win in 1 direction, 
+            # and my opponent to win in two directions
             #I want to put my token in a high impact cell to stop my opponent
-            #But I need to be careful not to force my opponent to block me on their next turn in a cell that
+            #But in this case, I need to be careful not to force my opponent to block me on their next turn in a cell that
             # is actually very helpful for them
             new_attempt = -1
             priority_set[1].each do |cell_index|
