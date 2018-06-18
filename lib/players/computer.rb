@@ -132,7 +132,7 @@ module Players
             priority_set[1].each do |cell_index|
               cells = board.cells.dup
               cells[cell_index] = self.token
-              #if I make the move, will I win my next turn (ie will opponent be forced to block me)
+              #if I make the move, will opponent be forced to block me?
               winning_cell_index = can_someone_win_next_turn?(cells, self.token)
               if ! priority_set[1].include?(winning_cell_index) && winning_cell_index != -1
                 #if I don't force a block on a cell that's helpful for the opponent, make the move
